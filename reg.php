@@ -58,7 +58,6 @@ exit;*/
 <?php
 // var_dump($_COOKIE);
 //var_dump($_SESSION);
-
 ?>
 </body>
 </html>
