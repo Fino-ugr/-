@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+
+<input id="date" type="text" name="dat1" class="date" maxlength=50 size=25% />
+                    <script>
+                        $(function () {
+                            $('#date').datepicker({
+                                language: "ru",
+                                selectWeek: true,
+                                format: "dd.mm.yyyy",
+                                autoclose: true,
+                                todayHighlight: true});
+                            var queryDate = "<?php echo "$mn" ?>";
+                            $('#date').datepicker('setDate', queryDate);
+                            $('#date').datepicker()
+                                    .on('changeDate', function (ev) {
+                                        document.getElementById('newFormAdv').submit();
+                                    });
+                        });
+                    </script>
+</body>
+</html>

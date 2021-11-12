@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title> Расходы за комуналку </title>
+<meta charset="utf-8">
+<meta name="PROBA">
+<meta http-equiv="Content-Type" content="text/html">
+    </head>
+<body>    
+<h1>Ведение статьи расходов за потребленные ресурсы (Газ, Электроэнергия, Вода, Канализация, Вывоз мусора)</h1>
+
+<h3> Введите расходы за месяц</h3>
+<form action="/0/4.php" method="POST">
+Введите месяц:
+   <input type="text" name="mes">
+Введите сумму:
+   <input type="text" name="sum">
+   <input type="submit">
+</form>
+
+<br>
+<br>
+
+Стереть файл расходов?
+   <form action="/0/5.php" method="POST">
+    
+    <select type="text" name="oper1">
+        <option value="yes"> Да </option>
+        <option value="no"> Нет </option>            
+    </select>
+    <input type="submit">
+</form> 
+
+
+</body>
+</html>
