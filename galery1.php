@@ -1,6 +1,6 @@
 <?php
 session_start();
-require __DIR__ . '/functions.php';
+require __DIR__ . '/functions1.php';
 if (!isUser()){
     header('Location: /0/i.php');
     exit;
@@ -15,20 +15,15 @@ $result = mysqli_query($mysqli, $query);
 
 while ($row = mysqli_fetch_row($result)) {
     ?>
+   
     <li><img src="<?php echo $row[2]?>">
     <br>
-    <?php
-   var_dump($row);
+    Название рисунка: <?php echo $row[1]; ?>
+
+<?php
+
 }
 
-/* получение ассоциативного массива */
-//while ($row = mysqli_fetch_row($result)) {printf("%s (%s)\n", $row[0], $row[1]);}
-echo "<br>";
-//while ($row = mysqli_fetch_row($result)) {var_dump($row);}
-//while ($row = mysqli_fetch_row($result)) {printf("%s (%s)\n (%s)\n", $row[0], $row[1], $row[2]);}
-//{printf("%s (%s)\n (%s)\n", $row[0], $row[1], $row[2]);} - этот код работает!
-//while ($row = mysqli_fetch_row($result)) {
-//printf("%s (%s)\n", $row[0], $row[1]);}
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 /*$dir = __DIR__ . '\images';
@@ -82,6 +77,19 @@ echo "</body></html>";*/
 ?>
 <br>
 <br>
-<br>
-    <li><img src="images\1.jpg">
-    <h2>Просто вывел ФОТКУ ...</h2>
+<table border="1"
+cellpadding="10"
+style="border-radius:10px;">
+<tr>
+<th>
+<form action="files/zagr-foto.php" method="post", enctype="multipart/form-data">
+    <p> Загрузить файл на СЕРВЕР </p>
+        Введите название изображения:
+    <input type="text" name="nm">
+        Выберете файл:
+    <input type="file" name="filename" size="15"> </br>
+    <input type="submit" value="Загрузить">
+</form>
+</th>
+</tr>
+</table>
